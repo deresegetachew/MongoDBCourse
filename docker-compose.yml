@@ -1,0 +1,20 @@
+version: "3"
+
+networks:
+  mongo-training-net:
+    driver: bridge
+volumes:
+  mongo-training-data:
+    driver: local
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:4.4.1
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-training-net
+    command: ["mongod"]
+    restart: always
+    volumes:
+      - "./.dbFiles:/data/db"

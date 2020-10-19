@@ -1,16 +1,19 @@
 # Intro to MongoDB
 
-> Derese Getachew & Bsquare IT Services
+> by Derese Getachew & Bsquare IT Services
 
-## Resources
-
-- [Mongodb Docs]()
-- [MongoDB Installation]()
-- [Mongoose]() 
-
+![Intro to MongoDb!](resources/mongodbSplash.png)
 
 ## Course
 
 1. [Introduction to Document Databases](course/documentDatabase.md)
 
-2.  
+2. [Installing & Running MongoDb](course/installingRunningMongoDb.md)
+
+3. [Building blocks of MongoDb](course/buildingBlocks.md)
+
+## Resources
+
+- [Mongodb Docs]()
+- [MongoDB Installation]()
+- [Mongoose]()
