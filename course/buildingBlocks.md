@@ -1,44 +1,22 @@
 # Building Blocks of MongoDb Database
 
-## Collection & Documents
+ 1. [Collections and Documents](/course/buildBlocks-collections.md)
+ 2. [BSON](/course/buildingBlocks-BSON.md)
+ 3. [Views]()
 
-Mongodb stores data records as documents (BSON documents),which are gathered together in collections.
+# Hands On :zap
 
-MongoDb stores **Documents** In **Collections**. <br>
-MongoDb Stores **Data records** in **Document**.
+## lets create a MongoDB
 
-![on Read and on write Schema!](../resources/overview-of-mongodb.png)
+## lets create a Collection
 
-if you are coming from relational databases the relatively comparative view would be the diagram below. Unlike relational databases though we don't use documents collections , documents and fields as schemas.
+## lets add a document to the collection
 
-** starting mongodb 3.2 we can enforce document validation rules for a collection during update and insert operations.
+## lets query the collection
 
-![on Read and on write Schema!](../resources/mongoDb-vs-relationalDb.jpg)
+## lets query the document
 
-## BSON
-
-A binary serialization format used to store documents and make remote procedure calls in mongodb.
-JSON is a subset of types supported by BSON. BSON adds support for data types, such as date and binary which are not supported in JSON.
-
-[for more on BSON to JSON](https://docs.mongodb.com/manual/reference/mongodb-extended-json/)
-
-### BSON Types
-
-#### Double
-
-stores floating point values.
-
-| Type        | Alias      |
-| ----------- | ---------- |
-| Double      | "double"   |
-| String      | "string"   |
-| Object      | "object"   |
-| Array       | "array"    |
-| Binary Data | "binData"  |
-| ObjectId    | "objectId" |
-| Boolean     | "bool"     |
-| Date        | "date"     |
-| Null        | "null"     |
+## lets add a New field to our document
 
 ## Views
 
@@ -83,17 +61,3 @@ Write Operations against views are not supported. i.e. they are readonly
     - Top field names can not contain the null character.
 
 > to learn more please refere (<https://docs.mongodb.com/manual/reference/limits/#operations>)
-
-## Hands On :zap
-
-### lets create a MongoDB
-
-## lets create a Collection
-
-## lets add a document to the collection
-
-## lets query the collection
-
-## lets query the document
-
-## lets add a New field to our document
