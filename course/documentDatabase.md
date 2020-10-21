@@ -43,6 +43,31 @@ lets represent the same information using JSON
 }
 ```
 
+## CAP Theorem
+
+The CAP theorem states that any **distributed system** can satisfy **only two of
+these three properties**:
+
+- **Consistency** implies that every read fetches the last write.
+- **Availability** implies that reads and writes always succeed. In other words, each non failing node will return a response in a reasonable amount of time.
+- **Partition tolerance** implies that the system will continue to function even when there is a data loss or system failure.
+
+CAP **theorem** categorizes a system according to three categories:
+
+  1. Consistency and availability.
+  2. Consistency and partition tolerance.
+  3. Availability and partition tolerance.
+
+![CAP Theorem!](../resources/cap.png)
+
+## BASE Approach
+
+NoSQL databases are based on the BASE approach. BASE stands for:
+
+- **Basic availability:** The database should be available most of the time.
+- **Soft state:** Temporary inconsistency is allowed.
+- **Eventual consistency:** The system will come to a consistent state after a certain period.
+
 ## What is a Schema
 
 The structure of the data and the relationship between the data is called schema of the data.
@@ -78,6 +103,22 @@ the method of how a schema is designed can influence different behaviors in a da
 | ![On read vs on write!](../resources/couch.png)           | **Apache CouchDB** is an open-source document-oriented NoSQL database, implemented in the concurrency-oriented language Erlang; it uses JSON to store data, JavaScript as its query language using MapReduce, and HTTP for an API.                                                                                         |
 | ![On read vs on write!](../resources/amazondocument.jpeg) | **Amazon DocumentDB** is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads. Amazon DocumentDB is designed from the ground-up to give you the performance, scalability, and availability you need when operating mission-critical MongoDB workloads at scale. |
 | ![On read vs on write!](../resources/elasticsearch.png)   | Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java.                                                                                        |
+
+## MongoDb Features
+
+- Document Databse
+- Schemaless
+- use BSON to store documents
+- Rich Query Language
+- Aggregation Framework (aggregation pipline , map-reduce functions)
+- Indexing
+- GridFS
+- Replication: a process of copying an instance of a database to different database servers.
+- Sharding : Method of distributing data across multiple databases
+- Mongo Shell: Interactive Javascript Interface to MongoDB
+
+> MongoDBServer -> mongod <br>
+> MongoDbClient -> mongo
 
 ## More Reading and References
 
