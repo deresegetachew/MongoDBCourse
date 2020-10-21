@@ -6,6 +6,26 @@ If you already have git , docker & docker-compose installed on your machine or i
 
 [follow this guide](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
 
+### Install on Windows
+
+- Download the MongoDB msi installer from ­ <https://www.mongodb.comdownload-center#enterprise>
+  
+  - Right-click the Windows installer, select Run as Administrator, and follow
+the instructions to install MongoDB.
+  - Create \data\db directory in C:\ to store MongoDB data. Directory looks
+  like “C:\data\db”.
+  - Open the command prompt and navigate to the MongoDB installation
+folder. Issue the ```mongod.exe``` command to start the MongoDB server, as
+shown below
+
+    ![Run mongodb on Docker!](../resource/../resources/commandToStartServer.png)
+
+    You should get a message that states “Waiting for connection on port 27017.”
+
+  - Open another command prompt and navigate to the MongoDb installation folder and execute the following command ```mongo.exe```  this will open the mongo shell as shown below.
+  
+       ![Run mongodb on Docker!](../resource/../resources/mongoexe.png)
+
 ## Install & configure MongoDb on Docker (not so easy :muscle:)
 
 ### Install Docker
