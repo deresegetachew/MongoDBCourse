@@ -33,4 +33,4 @@
 
 - [Mongodb Docs]()
 - [MongoDB Installation]()
-- [Mongoose]()
+- [MongoDB Glossary](https://docs.mongodb.com/manual/reference/glossary/#term-journal)
