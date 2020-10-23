@@ -14,6 +14,11 @@
 
 4. [CRUD Operations](course/crud.md)
 
+   1. Insert Operations
+   2. Query Documents
+   3. Update Documents
+   4. Delete Documents
+
 5. Data Modeling
 
 6. Indexing
@@ -24,10 +29,10 @@
 
 9. Exercises
 
-1. Shopping Cart with Product Reservation
-2. Shopping Cart with no product Reservation
-3. Theater Reservation
-4. Blog Comments as Slices
+10. Shopping Cart with Product Reservation
+11. Shopping Cart with no product Reservation
+12. Theater Reservation
+13. Blog Comments as Slices
 
 ## Resources
 

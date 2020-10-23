@@ -1,5 +1,7 @@
 # Installing & Running MongoDb
 
+![Run mongodb on Docker](../resources/installRun.png)
+
 If you already have git , docker & docker-compose installed on your machine or if you already have Mongodb installed on your machine, you can skip to [Run mongodb on Docker](#run-mongodb-on-docker)
 
 ## Install and Configure Mongodb on Bare Metal ( this is easy :smiley:)
@@ -18,7 +20,7 @@ the instructions to install MongoDB.
 folder. Issue the ```mongod.exe``` command to start the MongoDB server, as
 shown below
 
-    ![Run mongodb on Docker!](../resource/../resources/commandToStartServer.png)
+    ![Run mongodb on Docker!](../resources/commandToStartServer.png)
 
     You should get a message that states “Waiting for connection on port 27017.”
 
