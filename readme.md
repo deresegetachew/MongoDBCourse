@@ -13,10 +13,10 @@
 3. [Building blocks of MongoDb](course/buildingBlocks/buildingBlocks.md)
 
 4. [CRUD Operations](course/crud.md)
-   1. Insert Operations
-   2. Query Documents
-   3. Update Documents
-   4. Delete Documents
+   1. [Insert Documents](/course/crud/insert.md)
+   2. [Query Documents](/course/crud/read.md)
+   3. [Update Documents](/course/crud/update.md)
+   4. [Delete Documents](/course/crud/delete.md)
 
 5. Data Modeling
 
