@@ -10,10 +10,9 @@
 
 2. [Installing & Running MongoDb](course/installingRunningMongoDb.md)
 
-3. [Building blocks of MongoDb](course/buildingBlocks.md)
+3. [Building blocks of MongoDb](course/buildingBlocks/buildingBlocks.md)
 
 4. [CRUD Operations](course/crud.md)
-
    1. Insert Operations
    2. Query Documents
    3. Update Documents
@@ -33,6 +32,13 @@
 11. Shopping Cart with no product Reservation
 12. Theater Reservation
 13. Blog Comments as Slices
+
+# Things we didn't cover in detail or at all here :
+
+1. Transactions
+2. Sharding
+3. Aggregations
+4. Collation
 
 ## Resources
 
