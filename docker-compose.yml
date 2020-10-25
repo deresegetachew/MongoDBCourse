@@ -7,14 +7,44 @@ volumes:
   mongo-training-data:
     driver: local
 services:
-  mongodb:
-    container_name: mongodb
+  mongodb1:
+    container_name: mongodb1
     image: mongo:4.4.1
     ports:
       - "27017:27017"
     networks:
       - mongo-training-net
-    command: ["mongod"]
+    command: ["mongod", "--config", "/etc/mongod.conf.yaml"]
     restart: always
     volumes:
-      - "./.dbFiles:/data/db"
+      - "./dbFiles/db1:/data/db"
+      - "./config/mongod.conf.yaml:/etc/mongod.conf.yaml"
+      - "./config/replset.config.sh:/etc/replset.conf.sh"
+  mongodb2:
+    container_name: mongodb2
+    image: mongo:4.4.1
+    depends_on:
+      - "mongodb1"
+    ports:
+      - "27027:27017"
+    networks:
+      - mongo-training-net
+    command: ["mongod", "--config", "/etc/mongod.conf.yaml"]
+    restart: always
+    volumes:
+      - "./dbFiles/db2:/data/db"
+      - "./config/mongod.conf.yaml:/etc/mongod.conf.yaml"
+  mongodb3:
+    container_name: mongodb3
+    image: mongo:4.4.1
+    depends_on:
+      - "mongodb1"
+    ports:
+      - "27028:27017"
+    networks:
+      - mongo-training-net
+    command: ["mongod", "--config", "/etc/mongod.conf.yaml"]
+    restart: always
+    volumes:
+      - "./dbFiles/db3:/data/db"
+      - "./config/mongod.conf.yaml:/etc/mongod.conf.yaml"

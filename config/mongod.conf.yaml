@@ -1,0 +1,4 @@
+replication:
+  replSetName: training_replica_set
+net:
+  bindIpAll: true
