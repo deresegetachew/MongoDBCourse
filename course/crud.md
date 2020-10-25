@@ -114,11 +114,18 @@
 
     :( Our zoo is empty.
 
-- Bulk Write Operations
+Lets see in detail each of the  operations on Documents:
+
+- [Insert Documents](/course/crud/insert.md)
+- [Query Documents](/course/crud/read.md)
+- [Update Documents](/course/crud/update.md)
+- [Delete Documents](/course/crud/delete.md)
+
+<!-- - Bulk Write Operations
 - Import and Export
 - Embedded Documents
 - Working with arrays
 - Array of Embedded Documents
 - Projection
 - Dealing with Null and missing values
-- working with limit and skip
+- working with limit and skip -->
