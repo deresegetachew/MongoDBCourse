@@ -30,6 +30,8 @@ shown below
 
 ## Install & configure MongoDb on Docker (not so easy :muscle:)
 
+we will be running mongodb in a 3 replica set node.
+
 ### Install Docker
 
 [For Windows](https://docs.docker.com/docker-for-windows/install/) :warning:
@@ -50,23 +52,53 @@ This requires at list windows 7 64 bit OS and the machines virtualization enable
     docker-compose up -d
 ```
 
-4. To see if everything has run successfully.
+4. To see if everything has run successfully run <br>
 
-   1. Open your terminal and run.
-
-    ```sh
-        docker exec -it monogodb sh
+    ```
+    docker-compose ps
     ```
 
-    This will open a session in to your mongodb running container.
+    and you should see 3 containers running
+    ![Run mongodb on Docker!](../resources/mongo-repl.png)
 
-    2. run mongo shell
+5. next let setup a replicaset; First lets access our `mongodb1` container <br>
+   ``` docker exec -it mongodb1 sh ```
+6. once we are inside `mongodb1` container run <br>
+
+   ```sh
+   sh ./etc/replset.conf.sh
+   ```
+
+   and you should get a response similar but not identical to this with no errors.
+
+   ![Run mongodb on Docker!](../resources/setup_replset.png)
+7. To see if everything has run successfully.
+
+    1. run mongo shell
 
     ```
         mongo
     ```
 
     then run  <br>
+
+    this will open the mognoshell and you should a fully qualified name of the mongodb instance it connected to in the format `<replicasetname:PRIMARY>`
+
+    ![Run mongodb on Docker!](../resources/connected_replset.png)
+
+to see the status of our replica set run
+
+```
+    rs.status()
+```
+
+if you have mongodb compass installed  you can access
+
+- on port 27017 our Primary mongodb1
+- on port 27028 our secondary mongodb2
+- on port 27029 our secondary mongodb3
+
+finally lets ask our mongo shell to list available database
 
     ```
         show dbs
