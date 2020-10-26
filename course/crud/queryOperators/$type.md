@@ -1,20 +1,19 @@
-# $lt  and $lte
+# $type
 
-syntax:
+Syntax
 
-```
-{field: {$lt: value} }
-```
-
-```
-{
-    field: {$lte:value}
-}
+```js
+    { field: { $type: <BSON type> } }  
 ```
 
-$lt selects the documents where the value of the field is less than (i.e. <) the specified value.
+- $type selects documents where the value of the field is an instance of the specified BSON type(s).
+- Querying by data type is useful when dealing with highly unstructured data where data types are not predictable.
 
- $lte selects the documents where the value of the field is less than or equall (i.e. <=) the specified value.
+```js
+    { field: { $type: [ <BSON type1> , <BSON type2>, ... ] } }
+```
+
+- The above query will match documents where the field value is any of the listed types. The types specified in the array can be either numeric or string aliases.
 
 > ## :zap: Examples:
 
@@ -32,15 +31,10 @@ db.inventory.insertMany([
 { _id: 6, item: { name: "mn", code: "000" }, inStock:[{warehouse:"AA",qty: 5},{warehouse:"BB",qty:5}], tags: [ [ "formal", "anyPlace" ], "dress" ],carrier:{fee:5} }
 ])
 ```
-
-> find item who has a carrier fee less than 4 <br>
-> ``` db.inventory.find({"carrier.fee":{$lt:4}}) ``` <br>
 >
-> find item who has a carrier fee less than or equal than 6 <br>
-> ``` db.inventory.find({"carrier.fee":{$lte:6}}) ``` <br>
+> get all documents where item.code is string
 >
-> find in stock quantity where it is less than 5 <br>
-> ``` db.inventory.find({"inStock.qty":{$lt:5}}) ``` // what is wrong with the response you got ? <br>
+> ```js
+>  db.inventory.find({"item.code":{$type:"string"}})
+> ```
 >
-> find in stock quantity at whareouse:A where it is less than 5 <br>
-> ``` db.inventory.find({"inStock.qty":{$lt:4},"inStock.warehouse":{$eq:'AA'}}) ``` <br> // what is wrong with this answer

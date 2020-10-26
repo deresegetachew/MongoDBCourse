@@ -18,27 +18,25 @@
    3. [Update Documents](/course/crud/update.md)
    4. [Delete Documents](/course/crud/delete.md)
 
-5. Data Modeling
+5. Mongoose and building Our BackEnd for our[MEAN Stack Course]()
+   1. Features of a POS System we will build
+   2. Introduction to Mongoose
+   3. Building our Schemas and Models
+   4. Building our Backend API
 
-6. Indexing
+## Things not covered in detail or at all here :
 
-7. Security
-
-8. Monitoring
-
-9. Exercises
-
-10. Shopping Cart with Product Reservation
-11. Shopping Cart with no product Reservation
-12. Theater Reservation
-13. Blog Comments as Slices
-
-# Things we didn't cover in detail or at all here :
-
-1. Transactions
-2. Sharding
-3. Aggregations
-4. Collation
+1. Evaluation Query Operators
+2. GeoSpatial Query Operators
+3. BitWise Query Operators
+4. Views
+5. Transactions
+6. Sharding
+7. Aggregations
+8. Collation
+9. Indexing
+10. Security
+11. Monitoring
 
 ## Resources
 

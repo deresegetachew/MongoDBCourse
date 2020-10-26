@@ -12,7 +12,7 @@ $gt selects those documents where the value of the field is greater than (i.e. >
 
 > lets first populate our database with some data
 >
-> ``` db.inventory.deleteMany() ```
+> ``` db.inventory.deleteMany({}) ```
 >
 ```
 db.inventory.insertMany([

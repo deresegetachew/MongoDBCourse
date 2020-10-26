@@ -1,10 +1,22 @@
-# $eq
+# $eq and $ne
 
-Specifies equality condition. The $eq operator matches documents where the v**alue of a field equals the specified value**.
+$eq Specifies equality condition. The $eq operator matches documents where the v**alue of a field equals the specified value**.
 
-``` {<field>: {$eq: <value>} ```
+Syntax
+
+```
+{<field>: {$eq: <value>}
+```
 
 Specifying the $eq operator is equivalent to using the form ```{ field: <value> }``` except when the ```<value>``` is a regular expression.
+
+Syntax
+
+```
+{<field>:{$ne: <value>}}
+```
+
+$ne selects the documents where the value of the field is not equal to the specified value. **This includes documents that do not contain the field.**
 
 ## :zap: Examples :
 
@@ -24,9 +36,10 @@ db.inventory.insertMany([
 > get all documents where qty is equal to 20 <br>
 > ``` db.inventory.find( { qty: { $eq: 20 } } ) ``` <br>
 > ``` db.inventory.find( { qty: 20 } ) ```
-
-<br>
-
+<br><br>
+> get all documents where qty is **not** equal to 20 <br>
+> ```db.inventory.find({qty:{$ne:20}})```
+<br><br>
 > get all documents where item name equals "ab" <br>
 > ```db.inventory.find( { "item.name": { $eq: "ab" } } )``` <br>
 > ```db.inventory.find( { "item.name": "ab" } )```
@@ -36,6 +49,11 @@ db.inventory.insertMany([
 > get all documents where tags array contains "B" <br>
 > ```db.inventory.find( { tags: { $eq: "B" } } )```<br>
 > ```db.inventory.find( { tags: "B" } )```
+
+<br>
+
+> get all documents where tags array**does not** contain "B" <br>
+> ```db.inventory.find( { tags: { $ne: "B" } } )```<br>
 
 <br>
 
@@ -58,5 +76,14 @@ db.inventory.insertMany([
 >   db.inventory.find( { "item.name": { $eq: /a/ } })
 >// this is explicit query using $eq and it will only match for a regular expression  >`/a/` in item.name <br>
 >```  
-
-<br>
+>
+><br>
+><br>
+> get all documents where expired is not true <br>
+>
+> ```db.inventory.find({expired:{$ne: true}})``` <br>
+> <br>
+> get all document s where expired is not false <br>
+> ```db.inventory.find({expired:{$ne: false}})```
+> <br>
+> // you got the same result in the above two queries why?

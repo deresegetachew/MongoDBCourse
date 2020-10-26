@@ -1,7 +1,15 @@
 # Query Documents
 
-A way of querying documents from collections.
+Queries are made up 2 operations
 
-To Query documents we use different query and projection operators, lets first discuss those and we will go on building queries.
+- Querying Operation (criteria's defining  what we want fetched from the database)
+- Projection Operation (selecting what we want as a response)
 
+Syntax :
+
+```
+    db.collection.find({<query operations>},{<projection operation>})
+```
+
+Lets look at the different operators used to build this two operations
 [Query and Projection Operators](/course/crud/queryProjectionOperators.md)

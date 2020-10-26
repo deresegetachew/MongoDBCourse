@@ -1,20 +1,12 @@
-# $lt  and $lte
+# $or
 
-syntax:
+Syntax
 
-```
-{field: {$lt: value} }
-```
-
-```
-{
-    field: {$lte:value}
-}
+```js
+{ $or: [ { <expression1> }, { <expression2> }, ... , { <expressionN> } ] }
 ```
 
-$lt selects the documents where the value of the field is less than (i.e. <) the specified value.
-
- $lte selects the documents where the value of the field is less than or equall (i.e. <=) the specified value.
+The $or operator performs a logical OR operation on an **array** of two or more `<expressions>` and selects the documents that satisfy **at least one** of the `<expressions>`.
 
 > ## :zap: Examples:
 
@@ -33,14 +25,28 @@ db.inventory.insertMany([
 ])
 ```
 
-> find item who has a carrier fee less than 4 <br>
-> ``` db.inventory.find({"carrier.fee":{$lt:4}}) ``` <br>
+> get all documents where in carrier fee quantity is less than 2  or   inStock quantity is at not more than 5 in at list one of the warehouse locations <br>
 >
-> find item who has a carrier fee less than or equal than 6 <br>
-> ``` db.inventory.find({"carrier.fee":{$lte:6}}) ``` <br>
+> ```js
+>   db.inventory.find({$or: [{"carrier.fee":{$lt:2}},{"inStock.qty":{$lt:5}}]})
+> ```
 >
-> find in stock quantity where it is less than 5 <br>
-> ``` db.inventory.find({"inStock.qty":{$lt:5}}) ``` // what is wrong with the response you got ? <br>
+> <br>
 >
-> find in stock quantity at whareouse:A where it is less than 5 <br>
-> ``` db.inventory.find({"inStock.qty":{$lt:4},"inStock.warehouse":{$eq:'AA'}}) ``` <br> // what is wrong with this answer
+> get all documents where it has 'suite; in tags or its name starts with 'm';
+> or  its carrier fee is between 4 and 6 <br>
+> <br>
+>
+> ```js
+> db.inventory.find({
+>        $or:[
+>           {"tags":{$in:["suite"]}},
+>           {"item.name": {$regex:/m/} },
+>           {"$and":[
+>                 {"carrier.fee":{$gt:4}},
+>                  {"carrier.fee":{$lt:6}}
+>               ]
+>           }
+>           ]
+>  })
+> ```

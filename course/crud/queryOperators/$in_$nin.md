@@ -1,4 +1,4 @@
-# $in
+# $in and $nin
 
 The $in operator selects the documents where the value of a field **equals** any value in the specified array.
 
@@ -6,11 +6,18 @@ The $in operator selects the documents where the value of a field **equals** any
 
 ```{ field: { $in: [<value1>, <value2>, ... <valueN> ] } }```
 
+$nin operator selects documents where:
+
+- the field value is not in the specified array or
+- the field does not exist.
+
+``` { field: { $nin: [<value1>,<value2>...<valueN>] } } ```
+
 > ## :zap: Examples:
 
 > lets first populate our database with some data
 >
-> ``` db.inventory.deleteMany() ```
+> ``` db.inventory.deleteMany({}) ```
 >
 ```
 db.inventory.insertMany([
@@ -23,14 +30,20 @@ db.inventory.insertMany([
 ])
 ```
 
-> get all documents where in stock quantity is 5 or 15 <br>
+> get all documents where in stock quantity is 2 or 4 <br>
 > ```db.inventory.find({"inStock.qty":{$in:[2,4]}})``` <br>
+>
+> get all documents where in stock quantity is **not** in 2 or 4 <br>
+> ```db.inventory.find({"inStock.qty":{$nin:[2,4]}})```<br>
 >
 > get all documents where carrier fee is any of the following [2,4] <br>
 > ```db.inventory.find({"carrier.fee":{$in:[2,4]}})``` <br>
 >
 > get all documents  that have tags ["formal", "children","school]<br>
 > ``` db.inventory.find({"tags":{$in:["formal","children","school"]}}) ```<br>
+>
+> get all documents  that **do not** have tags ["formal", "children","school]<br>
+> ``` db.inventory.find({"tags":{$nin:["formal","children","school"]}}) ```<br>
 >
 > get all items that have run out in warehouseA <br>
 >``` db.inventory.find({"inStock":{$in:[{"warehouse":"AA",qty:0}]}}) ```<br>
