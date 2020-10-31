@@ -11,10 +11,10 @@ The $elemMatch operator matches documents
 - that contain **an array field**
 - with **at least one element** that matches **all** the specified **query criteria**.
 
-the difference between  $all and $elemMatch is
+the difference between  `$all` and `$elemMatch` is
 
-- $all queries against elements for equality, to find documents that have an array field that has all those elements.
-- $elemMatch queries against query expressions to find documents that have an array field that fullfil all the query criteria
+- `$all` queries against elements for equality, to find documents that have an array field that has all those elements.
+- `$elemMatch` queries against query expressions to find documents that have an array field that fullfil all the query criteria
 
 > ## :zap: Examples:
 
