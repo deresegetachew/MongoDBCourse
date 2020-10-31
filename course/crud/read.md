@@ -59,8 +59,19 @@ For comparison of different BSON type values, see the specified BSON comparison 
 
 ## Projection Operators :
 
-| Name       | Description                                                                             |
-| ---------- | --------------------------------------------------------------------------------------- |
-| $          | Projects the first element in an array that matches the query condition.                |
-| $elemMatch | Projects the first element in an array that matches the specified $elemMatch condition. |
-| $slice     | Limits the number of elements projected from an array. Supports skip and limit slices.  |
+  includes , excludes or adds a new field
+
+``` {$project: {<field1>:<1>,<field2>:<0>,<newField>:<expression>}} ```
+
+example:
+
+```db.colelction.find({},{name:1,"company.title":1})``` // we will get _id , name and company.title only <br>
+```db.collection.find({},{_id:0,"name":1,"age":1})``` // we will get name and age but not_id<br>
+```db.collection.find({},{address:0,age:0})```  // we will get all fields expect address and age<br>
+```db.collection({}.{name: 1, newAddress: $address})``` // we refere to address field of the input document , we will get_id , name  and address renamed as newAddress
+
+| Name                                                             | Description                                                                             |
+| ---------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`$`](/course/crud/projectionOperators/$_$elemMatch.md)          | Projects the first element in an array that matches the query condition.                |
+| [`$elemMatch`](/course/crud/projectionOperators/$_$elemMatch.md) | Projects the first element in an array that matches all specified $elemMatch condition. |
+| $slice                                                           | Limits the number of elements projected from an array. Supports skip and limit slices.  |
