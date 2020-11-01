@@ -15,9 +15,10 @@ Use of the $inc operator on a field with a null value will generate an error.
 $inc is an **atomic operation** within a single document.
 
 > ## :zap: Examples:
+
 > lets first populate our database with some data
 >
-> ``` db.inventory.deleteMany({}) ```
+> ``` db.students.deleteMany({}) ```
 
 ```js
     db.students.insertMany([

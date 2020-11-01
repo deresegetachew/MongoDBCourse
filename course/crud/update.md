@@ -29,17 +29,17 @@ To update documents mongodb gives us two modifiers:
 
 ## Array Operators
 
-| Name                  | Description                                                                                                                          |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ```$```               | Acts as a placeholder to update the first element that matches the query condition                                                   |
-| ```$[]```             | Acts as a placeholder to update all elements in an array for the documents that match the query condition                            |
-| ```$[<identifier>]``` | Acts as a placeholder to update all elements that match the arrayFilters condition for the documents that match the query condition. |
-| ```$addToSet```       | Adds elements to an array if they do not already exist in the set                                                                    |
-| ```$pop```            | Removes the first or last item of an array.                                                                                          |
-| ```$pull```           | Removes all array elements that match a specified query.                                                                             |
-| ```$push```           | Adds an item to an array.                                                                                                            |
-| ```$pullAll```        | Removes all matching values from an array.                                                                                           |
-| modifiers             |
-| ```$each```           | Modifies the ```$push``` and ```$addToSet``` operators to append multiple items for array updates.                                   |
-| ```$slice```          | Modifies the $push operator to limit the size of updated arrays.                                                                     |
-| ```$sort```           | Modifies the $push operator to reorder documents stored in an array.                                                                 |
+| Name                                                                     | Description                                                                                                                          |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [```$```](/course/crud/updateOperators/$.md)                             | Acts as a placeholder to update the first element that matches the query condition                                                   |
+| [```$[]```](/course/crud/updateOperators/$[].md)                         | Acts as a placeholder to update all elements in an array for the documents that match the query condition                            |
+| [```$[<identifier>]```](/course/crud/updateOperators/$[<identifier>].md) | Acts as a placeholder to update all elements that match the arrayFilters condition for the documents that match the query condition. |
+| [```$addToSet```](/course/crud/updateOperators/$addToSet.md)             | Adds elements to an array if they do not already exist in the set                                                                    |
+| [```$pop```](/course/crud/updateOperators/$pop.md)                       | Removes the first or last item of an array.                                                                                          |
+| [```$pull```](/course/crud/updateOperators/$pull.md)                     | Removes all array elements that match a specified query.                                                                             |
+| [```$push```](/course/crud/updateOperators/$push.md)                     | Adds an item to an array.                                                                                                            |
+| [```$pullAll```](/course/crud/updateOperators/$pullAll.md)               | Removes all matching values from an array.                                                                                           |
+| modifiers                                                                |
+| [```$each```](/course/crud/updateOperators/$each.md)                     | Modifies the ```$push``` and ```$addToSet``` operators to append multiple items for array updates.                                   |
+| [```$slice```](/course/crud/updateOperators/$slice.md)                   | Modifies the $push operator to limit the size of updated arrays.                                                                     |
+| [```$sort```](/course/crud/updateOperators/$sort.md)                     | Modifies the $push operator to reorder documents stored in an array.                                                                 |
