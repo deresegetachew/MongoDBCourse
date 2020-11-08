@@ -74,4 +74,4 @@ example:
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | [`$`](/course/crud/projectionOperators/$_$elemMatch.md)          | Projects the first element in an array that matches the query condition.                |
 | [`$elemMatch`](/course/crud/projectionOperators/$_$elemMatch.md) | Projects the first element in an array that matches all specified $elemMatch condition. |
-| $slice                                                           | Limits the number of elements projected from an array. Supports skip and limit slices.  |
+| [`$slice`](projectionOperators/$slice.md)                        | Limits the number of elements projected from an array. Supports skip and limit slices.  |

@@ -18,7 +18,8 @@
    3. [Update Documents](/course/crud/update.md)
    4. [Delete Documents](/course/crud/delete.md)
 
-5. Mongoose and building Our BackEnd for our[MEAN Stack Course]()
+5. [Data Modeling](/course/dataModeling/index.md)
+6. Mongoose and building Our BackEnd for our [MEAN Stack Course]()
    1. Features of a POS System we will build
    2. Introduction to Mongoose
    3. Building our Schemas and Models
